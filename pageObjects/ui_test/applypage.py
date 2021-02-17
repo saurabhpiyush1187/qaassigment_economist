@@ -17,6 +17,14 @@ class ApplyPage:
         self.ui_helper = UIHelper(self.driver)
 
     def verify_job_and_apply(self, pstr_button_name):
+        """  Description:
+                    |  This method will verify job description and apply button
+                :param pstr_button_name: Name of the Apply button E.g: Apply, Apply here, Apply Now
+                :type pstr_button_name: String
+
+                :return: boolean
+
+                                        """
         bln_job_result = False
         bln_button = False
         pstr_job = self.ui_helper.is_element_displayed(self.apply_locator.pstr_job_desc)

@@ -57,42 +57,29 @@ class Test_jobs:
                                 | I have verified pages of Banking sector and Business services sector
                                 | You can add sectors in TestData.json and call them here to test it
                         """
-        self.apply_job_banking()
+        self.apply_job(self.lst_apply_job_banking)
         self.driver.get(self.baseURL)
         assert self.jp.verify_job_page(self.job_page_title)
-        self.apply_job_business()
+        self.apply_job(self.lst_apply_job_bussiness)
 
-    def apply_job_banking(self):
-        self.logger.info("****Started Apply Job Test Banking****")
-        self.jp.click_sector(self.lst_apply_job_banking)
+
+
+
+    def apply_job(self,pstr_sector_name):
+        self.logger.info("****Started Apply Job Test****"+pstr_sector_name)
+        self.jp.click_sector(pstr_sector_name)
         self.sp = SectorPage(self.driver)
-        assert self.sp.verify_sector_page(self.lst_apply_job_banking)
-        assert self.sp.verify_search_criteria(self.search_criteria, self.lst_apply_job_banking)
+        assert self.sp.verify_sector_page(pstr_sector_name)
+        assert self.sp.verify_search_criteria(self.search_criteria, pstr_sector_name)
         assert self.sp.verify_and_click_job()
         self.ap = ApplyPage(self.driver)
         bln_apply = self.ap.verify_job_and_apply('Apply')
         if bln_apply:
-            self.logger.info("****Apply Job Successful Baking****")
-            self.logger.info("****Apply Job  Ended Banking****")
+            self.logger.info("****Apply Job Successful**" + pstr_sector_name)
+            self.logger.info("****Apply Job  Ended ****"  + pstr_sector_name)
         else:
-            self.logger.info("****Apply Job unsuccessful Banking****")
-            self.logger.info("****Apply Job  Ended Banking****")
-
-    def apply_job_business(self):
-        self.logger.info("****Started Apply Job Test Business Services****")
-        self.jp.click_sector(self.lst_apply_job_bussiness)
-        self.sp = SectorPage(self.driver)
-        assert self.sp.verify_sector_page(self.lst_apply_job_bussiness)
-        assert self.sp.verify_search_criteria(self.search_criteria, self.lst_apply_job_bussiness)
-        assert self.sp.verify_and_click_job()
-        self.ap = ApplyPage(self.driver)
-        bln_apply = self.ap.verify_job_and_apply('Apply')
-        if bln_apply:
-            self.logger.info("****Apply Job Successful Business Services****")
-            self.logger.info("****Apply Job  Ended Business Services****")
-        else:
-            self.logger.info("****Apply Job unsuccessful Business Services****")
-            self.logger.info("****Apply Job  Ended Business Services****")
+            self.logger.info("****Apply Job unsuccessful****"  + pstr_sector_name)
+            self.logger.info("****Apply Job  Ended****" + pstr_sector_name )
 
     def top_navigation_links(self):
         self.logger.info("****Started Top Navigation link Test****")

@@ -17,6 +17,14 @@ class JobPage:
         self.ui_helper = UIHelper(self.driver)
 
     def verify_job_page(self, str_pageheader):
+        """  Description:
+                                |  This method will allow user to verify base page
+                                :param str_pageheader: Page header
+                                :type str_pageheader: String
+
+                                :return: None
+
+                                                        """
         pstr_page_header = self.job_locator.pstr_verify_home_page.format(str_pageheader)
         bln_page_header = self.ui_helper.is_element_displayed(pstr_page_header)
         if bln_page_header:
@@ -30,7 +38,13 @@ class JobPage:
 
     def verify_list_elements(self, pstr_naivigation_list, pstr_list_type):
         """  Description:
-                                        |  This method will verify list_elements rendering on the page
+            |  This method will verify list_elements rendering on the page
+        :param pstr_naivigation_list: list of elements to be verified
+        :type pstr_naivigation_list: Dictionary
+        :param pstr_list_type: type of list. E.g. Top Nav, sector list,etc.
+        :type pstr_list_type: String
+
+        :return: boolean
 
                                 """
         bln_top = False
@@ -60,6 +74,16 @@ class JobPage:
 
 
     def verify_top_links(self, pstr_nav_links, pstr_nav_headers):
+        """  Description:
+                    |  This method will verify links redirection along with pae headers
+                :param pstr_nav_links: list of links to be verified on the page
+                :type pstr_nav_links: Dictionary
+                :param pstr_nav_headers: list of headers to be verified
+                :type pstr_nav_headers: Dictionary
+
+                :return: boolean
+
+                                        """
         bln_verify_link = False
         bln_page_header = False
         for prop, value in pstr_nav_links.items():
@@ -85,6 +109,14 @@ class JobPage:
             return False
 
     def click_sector(self, pstr_sector_type):
+        """  Description:
+                        |  This method will click on the sector type
+                        :param pstr_sector_type: Name of type of sector
+                        :type pstr_sector_type: String
+
+                        :return: None
+
+                                                """
         pstr_web_elem = self.driver.find_elements_by_xpath(self.job_locator.pstr_sector_list)
         for element in pstr_web_elem:
             if element.text == pstr_sector_type:
