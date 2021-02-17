@@ -1,0 +1,51 @@
+{
+    "job_page": {
+        "title": "Jobs.Economist.com"
+    },
+    "navigation_bar_items": {
+        "Home": "",
+        "Find a job": "/jobs/",
+        "Job alerts": "/newalert/",
+        "Search recruiters": "/employers/",
+        "Jobs blog": "/careers/"
+    },
+    "navigation_bar_headers": {
+        "Home": "Find a job on The Economist Jobs Board",
+        "Find a job": "Found",
+        "Job alerts": "Create a job alert",
+        "Search recruiters": "Search",
+        "Jobs blog": "Jobs blog"
+    },
+    "search_bar": {
+        "position": "e.g. Director",
+        "location": "e.g. UK"
+    },
+    "sector_list": {
+        "sector_1": "Banking and finance",
+        "sector_2": "Business services",
+        "sector_3": "Government",
+        "sector_4": "Academia",
+        "sector_5": "Primary and utility",
+        "sector_6": "Charity",
+        "sector_7": "International public sector",
+        "sector_8": "NGO",
+        "sector_9": "Consultancy",
+        "sector_10": "Development",
+        "sector_11": "Health",
+        "sector_12": "Humanitarian",
+        "sector_13": "Other"
+    },
+    "other_link": {
+        "Sign in": "/logon/",
+        "Create account": "/register/"
+    },
+    "other_headers": {
+        "Sign in": "Sign in",
+        "Create account": "Create an account"
+    },
+
+    "apply_job": {
+        "Sector_1": "Banking and finance",
+        "Sector_2": "Business services"
+    }
+}
